@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ユーザーの想いに寄り添い、伝わるWebサイトを制作するポートフォリオです。">
+  <title>Yukki Portfolio | 想いに寄り添い、伝わるカタチをつくる。</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <!-- 01 HEADER：サイトのロゴとナビゲーション -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="#top"><span>Yukki</span> Portfolio</a>
+      <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="global-nav">☰</button>
+      <nav class="global-nav" id="global-nav" aria-label="メインナビゲーション">
+        <!-- 英語の表面と、日本語の裏面を持つ回転メニュー -->
+        <a class="rolling-link" href="#about" aria-label="私について"><span class="rolling-text"><span class="rolling-front">About</span><span class="rolling-back" aria-hidden="true">私について</span></span></a>
+        <a class="rolling-link" href="#skills" aria-label="スキル"><span class="rolling-text"><span class="rolling-front">Skills</span><span class="rolling-back" aria-hidden="true">スキル</span></span></a>
+        <a class="rolling-link" href="#works" aria-label="制作実績"><span class="rolling-text"><span class="rolling-front">Works</span><span class="rolling-back" aria-hidden="true">制作実績</span></span></a>
+        <a class="nav-contact" href="#contact">✉ お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 02 HERO：メインビジュアル。背景の葉の写真は参考画像から切り出した素材です。 -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-shape hero-shape-left"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">WEB DESIGN &amp; DEVELOPMENT</p>
+          <h1 id="hero-title">想いに寄り添い、<br>伝わる<span>カタチ</span>をつくる。</h1>
+          <p class="hero-description">ユーザー目線と、これまでの経験を活かして<br>見やすく・使いやすく・目的に届くWebサイトを制作します。</p>
+          <div class="button-group"><a class="button button-primary" href="#works">制作実績を見る <span>→</span></a><a class="button button-outline" href="#about">私について <span>→</span></a></div>
+        </div>
+        <div class="hero-visual"><img src="assets/hero-scene.webp" alt="窓辺の植物とノートパソコン、右側に取っ手があるコーヒーカップ。手書きの日本語メッセージを添えた明るい作業風景" width="740" height="479"></div>
+      </div>
+      <!-- HERO：中央下の植物型スクロール矢印。葉の根元より下には線を描かない。 -->
+      <a class="scroll-leaf" href="#about" aria-label="下へスクロールして私についてを見る">
+        <svg class="scroll-leaf-picture" viewBox="0 0 100 150" width="90" height="135" aria-hidden="true" focusable="false">
+          <!-- 上部の小さな葉っぱと、下へ伸びる茎 -->
+          <path class="scroll-leaf-stem" d="M50 9 C47 32 52 52 50 73 L50 112" />
+          <path class="scroll-leaf-small" d="M49 34 C33 27 29 14 31 10 C43 12 49 23 49 34 Z" />
+          <path class="scroll-leaf-small light" d="M51 51 C63 40 65 31 64 26 C54 30 50 41 51 51 Z" />
+          <path class="scroll-leaf-small" d="M49 76 C38 67 34 59 34 55 C44 58 49 68 49 76 Z" />
+          <!-- 大きな葉っぱ2枚で下向きの「＼／」を作る。下への線は足さない -->
+          <path class="scroll-leaf-arrow-left" d="M50 127 C34 123 20 110 14 91 C30 95 43 108 50 127 Z" />
+          <path class="scroll-leaf-arrow-right" d="M50 127 C66 123 80 110 86 91 C70 95 57 108 50 127 Z" />
+          <path class="scroll-leaf-vein" d="M20 97 Q37 112 50 127 M80 97 Q63 112 50 127" />
+        </svg>
+        <span class="scroll-leaf-label">SCROLL DOWN</span>
+      </a>
+    </section>
+
+    <!-- 03 ABOUT ME：人物イラスト・紹介文・経歴カード -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-portrait"><img src="assets/about-illustration.webp" alt="親しみやすく穏やかな表情の人物イラスト" width="305" height="248"><span class="handwriting portrait-label">About Me</span></div>
+        <div class="about-copy"><p class="section-kicker">ABOUT ME</p><h2 class="draw-title" id="about-title">私について</h2><div class="small-line"></div><p>これまで営業・マネジメント業務に携わり、お客様のニーズを汲み取る提案力や、円滑に業務を進めるための調整力を培ってきました。</p><p>Web制作の職業訓練校では、HTML・CSS・JavaScript・PHP・WordPress・Figmaなどを学び、Photoshop・Illustrator・Canvaについても独学でスキルを磨いてきました。</p><p>制作にあたっては、まず「誰に、何を、何のために伝えるのか」を明確にすることを大切にしています。目的をしっかりと捉え、使う人にとって分かりやすく、伝えたい想いがきちんと届くWebサイトを目指しています。</p><a class="button button-primary button-small" href="#contact">詳しく見る <span>→</span></a></div>
+        <div class="about-facts" aria-label="趣味とプロフィール">
+          <ul class="about-profile-list">
+            <li><span class="profile-icon" aria-hidden="true">⌖</span><div class="profile-detail"><span class="profile-label">LOCATION</span><strong>茨城県在住</strong><p>茨城の落ち着く自然が好き。</p></div></li>
+            <li><span class="profile-icon" aria-hidden="true">♧</span><div class="profile-detail"><span class="profile-label">HOBBY</span><strong>ポケモンカード</strong><p>オーガナイザー資格あり。TSUTAYAなどで月に一度、子どもたちへのティーチングが楽しみ。</p></div></li>
+            <li><span class="profile-icon" aria-hidden="true">✦</span><div class="profile-detail"><span class="profile-label">FITNESS</span><strong>筋トレ・ランニング</strong><p>自宅に懸垂器を購入し、日々トレーニング中。</p></div></li>
+            <li><span class="profile-icon" aria-hidden="true">▤</span><div class="profile-detail"><span class="profile-label">READING</span><strong>読書</strong><p>ジャンルは雑食。月に5冊は読む。</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 SKILLS：ツールごとのカラーアイコンで紹介（Ver.29） -->
+    <section class="section skills" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-heading"><p class="section-kicker">SKILLS</p><h2 class="draw-title" id="skills-title">できること</h2><p>デザインからコーディング、運用まで。<br>目的に合わせて幅広く対応できます。</p></div>
+        <div class="skill-grid skill-grid--individual">
+          <article class="skill-card skill-card--individual">
+            <img class="skill-brand-logo" src="assets/skill-html.svg" alt="" width="64" height="64" loading="lazy">
+            <h3>HTML</h3>
+            <p>Webページの構造を、意味を意識して組み立てます。</p>
+          </article>
+          <article class="skill-card skill-card--individual">
+            <img class="skill-brand-logo" src="assets/skill-css.svg" alt="" width="64" height="64" loading="lazy">
+            <h3>CSS</h3>
+            <p>レスポンシブ対応や見やすいレイアウトを制作します。</p>
+          </article>
+          <article class="skill-card skill-card--individual">
+            <img class="skill-brand-logo" src="assets/skill-javascript.svg" alt="" width="64" height="64" loading="lazy">
+            <h3>JavaScript</h3>
+            <p>動きのあるUIや操作しやすい仕組みを実装します。</p>
+          </article>
+          <article class="skill-card skill-card--individual">
+            <img class="skill-brand-logo" src="assets/skill-wordpress.svg" alt="" width="64" height="64" loading="lazy">
+            <h3>WordPress</h3>
+            <p>テーマ制作・カスタマイズや更新作業に対応します。</p>
+          </article>
+          <article class="skill-card skill-card--individual">
+            <img class="skill-brand-logo" src="assets/skill-figma.svg" alt="" width="64" height="64" loading="lazy">
+            <h3>Figma</h3>
+            <p>ワイヤーフレームや画面デザインを作成します。</p>
+          </article>
+          <article class="skill-card skill-card--individual">
+            <img class="skill-brand-logo" src="assets/skill-canva.svg" alt="" width="64" height="64" loading="lazy">
+            <h3>Canva</h3>
+            <p>バナーやSNS向けの画像・コンテンツを制作します。</p>
+          </article>
+          <article class="skill-card skill-card--individual">
+            <img class="skill-brand-logo" src="assets/skill-photoshop.svg" alt="" width="64" height="64" loading="lazy">
+            <h3>Photoshop</h3>
+            <p>写真の補正や画像の加工・調整を行います。</p>
+          </article>
+          <article class="skill-card skill-card--individual">
+            <img class="skill-brand-logo" src="assets/skill-illustrator.svg" alt="" width="64" height="64" loading="lazy">
+            <h3>Illustrator</h3>
+            <p>図形や文字を使ったグラフィックを制作します。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 WORKS：ボタンでタグ別に作品を絞り込みます。 -->
+    <section class="section works" id="works" aria-labelledby="works-title">
+      <div class="container"><div class="section-heading"><p class="section-kicker">WORKS</p><h2 class="draw-title" id="works-title">制作実績</h2><p>制作の目的や工夫したことも紹介していきます。</p></div>
+        <div class="filters" role="group" aria-label="制作実績の絞り込み"><button class="filter is-active" data-filter="all" aria-pressed="true">すべて</button><button class="filter" data-filter="HTML" aria-pressed="false">HTML</button><button class="filter" data-filter="CSS" aria-pressed="false">CSS</button><button class="filter" data-filter="JavaScript" aria-pressed="false">JavaScript</button><button class="filter" data-filter="WordPress" aria-pressed="false">WordPress</button><button class="filter" data-filter="PHP" aria-pressed="false">PHP</button></div>
+        <div class="work-grid">
+          <article class="work-card" role="button" tabindex="0" data-work="0" data-tags="HTML CSS JavaScript"><div class="work-image"><img src="assets/work-cafe.webp" alt="Cafe Lumiereのパソコン・スマートフォン表示" loading="lazy" width="281" height="146"></div><div class="work-body"><h3>Cafe Lumiere <small>（架空サイト）</small></h3><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><p>カフェの雰囲気を伝える、シンプルで落ち着いたサイトを制作しました。</p><span class="work-link-note">詳細を見る ↗</span></div><button type="button" class="work-open" data-work-open="0" aria-label="Cafe Lumiereの制作実績を詳しく見る">作品の詳細を見る <span aria-hidden="true">↗</span></button></article>
+          <article class="work-card" role="button" tabindex="0" data-work="1" data-tags="HTML CSS JavaScript"><div class="work-image"><img src="assets/work-andante.webp" alt="Andanteのパソコン・スマートフォン表示" loading="lazy" width="296" height="146"></div><div class="work-body"><h3>Andante <small>（架空サイト）</small></h3><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><p>観光地をイメージした、動きのあるデザインのサイトです。</p><span class="work-link-note">詳細を見る ↗</span></div><button type="button" class="work-open" data-work-open="1" aria-label="Andanteの制作実績を詳しく見る">作品の詳細を見る <span aria-hidden="true">↗</span></button></article>
+          <article class="work-card" role="button" tabindex="0" data-work="2" data-tags="WordPress PHP"><div class="work-image"><img src="assets/work-zoo.webp" alt="ZOO LOGICALのパソコン・スマートフォン表示" loading="lazy" width="293" height="146"></div><div class="work-body"><h3>ZOO LOGICAL <small>（架空サイト）</small></h3><div class="tags"><span>WordPress</span><span>PHP</span></div><p>WordPressで構築した、動物園の情報サイトです。</p><span class="work-link-note">詳細を見る ↗</span></div><button type="button" class="work-open" data-work-open="2" aria-label="ZOO LOGICALの制作実績を詳しく見る">作品の詳細を見る <span aria-hidden="true">↗</span></button></article>
+        </div><p class="no-results" hidden>該当する制作実績はありません。</p>
+      </div>
+    </section>
+
+    <!-- 06 CONTACT：独立したお問い合わせセクション -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title"><div class="container contact-grid"><div><p class="section-kicker">CONTACT</p><h2 class="draw-title" id="contact-title">お問い合わせ</h2><p>お仕事のご相談、サイト制作のご依頼など<br>お気軽にお問い合わせください。</p><a class="button button-primary" href="mailto:hello@example.com?subject=ポートフォリオからのお問い合わせ">✉ お問い合わせはこちら <span>→</span></a><p class="contact-note">※ メールアドレスは公開前に変更してください。</p></div><div class="contact-art"><img src="assets/footer-scene.webp" alt="緑の植物とノート、コーヒーカップのある明るい机" loading="lazy" width="599" height="180"><span class="handwriting">Let's create<br>together!</span></div></div></section>
+  </main>
+
+  <!-- 07 FOOTER：ロゴ・メニュー・著作権表示 -->
+  <footer class="site-footer"><div class="container footer-inner"><a class="logo" href="#top"><span>Yukki</span> Portfolio</a><nav aria-label="フッターナビゲーション"><a href="#about">About</a><a href="#skills">Skills</a><a href="#works">Works</a><a href="#contact">Contact</a></nav><small>© 2026 Yukki Portfolio.</small></div></footer>
+  <a class="back-to-top" href="#top" aria-label="ページの先頭へ戻る">↑</a>
+
+  <!-- Ver.30：Works詳細モーダル。画像はあとから作品ごとに3〜5枚まで追加可能。 -->
+  <div class="work-modal" id="work-modal" hidden>
+    <div class="work-modal-backdrop" data-close-work></div>
+    <section class="work-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="work-modal-title" tabindex="-1">
+      <button class="work-modal-close" type="button" data-close-work aria-label="詳細を閉じる">×</button>
+      <p class="work-modal-kicker">WORKS DETAIL</p>
+      <h2 id="work-modal-title"></h2>
+      <div class="work-slide">
+        <button type="button" class="work-slide-arrow" id="work-slide-prev" aria-label="前の画像">‹</button>
+        <div class="work-slide-frame" id="work-slide-frame" aria-live="polite"></div>
+        <button type="button" class="work-slide-arrow" id="work-slide-next" aria-label="次の画像">›</button>
+      </div>
+      <div class="work-slide-controls"><span id="work-slide-caption"></span><span id="work-slide-count"></span></div>
+      <div class="work-slide-dots" id="work-slide-dots" aria-label="画像を選択"></div>
+      <div class="work-modal-info"><h3>作品について</h3><p id="work-modal-description"></p><h3>使用技術</h3><p id="work-modal-tech"></p><h3>制作のポイント</h3><p class="work-modal-placeholder">制作目的・担当範囲・工夫した点は、あとからここに追加できます。</p></div>
+    </section>
+  </div>
+  <!-- Ver.18: 葉っぱを押したときだけ現れる植物のページガイド -->
+  <aside class="auto-guide" id="auto-guide" hidden aria-label="ページ案内">
+    <div class="auto-guide-top">
+      <span class="auto-guide-brand"><span aria-hidden="true">❧</span> PAGE GUIDE</span>
+      <span class="auto-guide-status" id="auto-guide-status">移動中</span>
+    </div>
+    <!-- 小さな芽がセクションごとに成長する飾り。ボタンの操作は妨げません -->
+    <div class="guide-plant" data-stage="1" aria-hidden="true">
+      <svg viewBox="0 0 88 66" width="88" height="66" focusable="false">
+        <ellipse class="plant-soil" cx="44" cy="61" rx="24" ry="4" fill="#e7dfc7"/>
+        <path class="plant-stem" d="M44 60 Q42 42 44 18" fill="none" stroke="#7a9d69" stroke-width="3.4" stroke-linecap="round"/>
+        <path class="plant-leaf plant-leaf-left" d="M44 45 Q21 48 23 31 Q38 29 44 45" fill="#9fbe87"/>
+        <path class="plant-leaf plant-leaf-right" d="M44 36 Q66 38 65 21 Q49 22 44 36" fill="#82ab78"/>
+        <path class="plant-leaf plant-leaf-top" d="M44 26 Q28 18 36 8 Q47 13 44 26" fill="#a8c891"/>
+        <g class="plant-flower" transform="translate(44 13)">
+          <circle cx="0" cy="-7" r="6" fill="#fff9e9"/>
+          <circle cx="7" cy="-1" r="6" fill="#fff9e9"/>
+          <circle cx="4" cy="7" r="6" fill="#fff9e9"/>
+          <circle cx="-5" cy="6" r="6" fill="#fff9e9"/>
+          <circle cx="-7" cy="-2" r="6" fill="#fff9e9"/>
+          <circle cx="0" cy="0" r="4.2" fill="#eacb76"/>
+        </g>
+      </svg>
+    </div>
+    <p class="auto-guide-current" id="auto-guide-current">About Me</p>
+    <p class="auto-guide-next" id="auto-guide-next">次は Skills</p>
+    <div class="auto-guide-actions">
+      <button type="button" class="auto-guide-button auto-guide-back" id="auto-guide-back">↑ 戻る</button>
+      <button type="button" class="auto-guide-button auto-guide-forward" id="auto-guide-forward">次へ ↓</button>
+    </div>
+    <p class="auto-guide-hint">操作しなければ自動で次へ進みます</p>
+  </aside>
+</body>
+</html>

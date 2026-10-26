@@ -1,0 +1,565 @@
+/* =========================================================
+  Yukki Portfolio - style.css
+  セクションごとにCSSを分けています。上から順番に読めます。
+  色を変えたいときは、まず :root の変数を変更してください。
+========================================================= */
+:root { --green:#54866e; --green-dark:#345e4c; --green-light:#e7f2e8; --ink:#33424b; --muted:#67747a; --paper:#fbfdfb; --shadow:0 12px 30px rgba(52,86,68,.08); }
+* {box-sizing:border-box} html {scroll-behavior:smooth} body {margin:0;color:var(--ink);font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;background:var(--paper);line-height:1.85;font-size:14px} a{color:inherit;text-decoration:none} button{font:inherit} img{display:block;max-width:100%;height:auto} .container{width:min(1120px,calc(100% - 64px));margin:auto} .section{padding:75px 0;position:relative} .section-kicker,.eyebrow{letter-spacing:.23em;font-size:11px;font-weight:700;color:var(--green-dark)} h1,h2,h3,p{margin-top:0} h2{font-size:29px;letter-spacing:.06em;margin-bottom:15px;line-height:1.4} h3{font-size:17px;line-height:1.5} p{line-height:1.95} .handwriting,.logo{font-family:"Segoe Print","Comic Sans MS",cursive;font-style:italic}
+/* 01 HEADER */
+.site-header{height:74px;position:relative;z-index:5;background:rgba(251,253,251,.94)} .header-inner{height:100%;display:flex;align-items:center;justify-content:space-between} .logo{font-size:22px;color:var(--ink);white-space:nowrap}.logo span{color:var(--green);font-weight:700}.global-nav{display:flex;align-items:center;gap:30px;font-size:12px;letter-spacing:.07em}.global-nav>a:not(.nav-contact):hover{color:var(--green)}.nav-contact{background:var(--green);color:white;padding:8px 18px;border-radius:40px}.menu-toggle{display:none}
+/* 02 HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(125deg,#f7faf6,#fff 47%,#f0f7f0);padding:24px 0 36px}.hero::before{content:"";position:absolute;width:500px;height:230px;left:-130px;top:-80px;background:#e7f1e6;border-radius:40% 60% 65% 35%;opacity:.7;transform:rotate(-12deg)}.hero-inner{min-height:470px;display:grid;grid-template-columns:45% 55%;align-items:center;gap:8px;position:relative}.hero-copy{position:relative;z-index:2}.eyebrow{margin-bottom:22px}.hero h1{font-size:clamp(30px,3.3vw,47px);line-height:1.55;letter-spacing:.06em;font-weight:700;margin-bottom:19px;white-space:nowrap}.hero h1 span{color:var(--green)}.hero-description{font-size:13px;margin-bottom:27px}.button-group{display:flex;gap:14px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;justify-content:center;gap:24px;border-radius:40px;padding:10px 22px;font-weight:700;font-size:12px;transition:transform .2s,background .2s}.button:hover{transform:translateY(-2px)}.button-primary{background:var(--green);color:#fff}.button-primary:hover{background:var(--green-dark)}.button-outline{border:1px solid var(--green);color:var(--green-dark);background:#fff9}.button-small{margin-top:12px}.scroll-cue{font-size:10px;letter-spacing:.15em;margin-top:42px}.scroll-cue span{display:block;height:37px;width:1px;background:var(--green);margin:6px 0 0 13px}.hero-visual{position:relative;border-radius:38% 28% 35% 24% / 24% 37% 22% 35%;overflow:hidden;box-shadow:0 20px 55px #7397821c;background:#e9f3e9}.hero-visual img{width:100%;height:430px;object-fit:cover;object-position:center}.hero-handwriting{position:absolute;top:26%;right:7%;font-size:21px;line-height:1.2;color:var(--green-dark);transform:rotate(-10deg);text-shadow:0 1px 8px white}
+/* 03 ABOUT */
+.about{background:#fff}.about-grid{display:grid;grid-template-columns:29% 36% 31%;align-items:center;gap:2%}.about-portrait{position:relative}.about-portrait img{width:100%;border-radius:45% 35% 40% 30%;mix-blend-mode:multiply}.portrait-label{position:absolute;left:2%;top:60%;font-size:20px;color:var(--green);transform:rotate(-13deg)}.about-copy p{font-size:13px;margin-bottom:12px}.about-copy h2{margin-bottom:7px}.small-line{width:35px;height:2px;background:var(--green);margin-bottom:19px}.about-facts{background:white;border-radius:22px;box-shadow:var(--shadow);padding:22px 20px}.about-facts ul{list-style:none;padding:0;margin:0}.about-facts li{display:flex;align-items:center;gap:12px;margin:14px 0;font-size:12px}.about-facts li span{font-size:19px;color:var(--green);width:25px;text-align:center}
+/* 04 SKILLS */
+.skills{background:radial-gradient(ellipse at 12% 20%,#eaf4e9 0,transparent 34%),linear-gradient(#fbfdfb,#f5faf6)}.section-heading{text-align:center;margin-bottom:33px}.section-heading .section-kicker{margin-bottom:3px}.section-heading h2{margin-bottom:8px}.section-heading>p:last-child{font-size:12px;color:var(--muted)}.skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.skill-card{background:rgba(255,255,255,.9);padding:27px 16px 22px;border-radius:25px;text-align:center;box-shadow:var(--shadow);min-height:260px}.skill-icon{display:grid;place-items:center;width:76px;height:76px;margin:0 auto 15px;background:#e9f3ec;border-radius:45% 55% 50% 40%;font-size:38px;color:var(--green-dark)}.skill-card h3{font-size:15px;margin-bottom:10px}.tags{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}.tags span{background:#e8f1f1;color:#50666c;padding:1px 9px;border-radius:20px;font-size:10px;line-height:1.9}.skill-card p{font-size:12px;margin:15px 0 0}
+/* 05 WORKS */
+.works{background:#f8fbf8}.filters{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin-bottom:29px}.filter{cursor:pointer;border:1px solid #d5e6d9;border-radius:30px;background:#edf5ee;padding:6px 15px;color:#496458;font-size:12px}.filter:hover,.filter.is-active{background:var(--green);color:white;border-color:var(--green)}.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.work-card{background:#fff;border-radius:25px;box-shadow:var(--shadow);overflow:hidden;transition:transform .2s}.work-card:hover{transform:translateY(-4px)}.work-card[hidden]{display:none}.work-image{height:195px;display:grid;place-items:center;background:radial-gradient(ellipse,#f1f7f1,#fff);padding:12px}.work-image img{width:100%;height:100%;object-fit:contain}.work-body{padding:17px 21px 22px}.work-body h3{font-size:16px;margin-bottom:8px}.work-body h3 small{font-size:11px;font-weight:400}.work-body .tags{justify-content:flex-start}.work-body p{font-size:12px;margin:10px 0}.work-link-note{font-size:11px;color:var(--green);font-weight:700}.no-results{text-align:center;color:var(--muted)}
+/* 06 CONTACT */
+.contact{background:linear-gradient(130deg,#fff,#eff7ef)}.contact-grid{display:grid;grid-template-columns:40% 60%;align-items:center;gap:10px}.contact-grid>div:first-child{position:relative;z-index:1}.contact h2{margin-bottom:14px}.contact p:not(.section-kicker){font-size:13px}.contact-art{height:230px;overflow:hidden;position:relative;border-radius:45% 30% 35% 40% / 35% 40% 35% 25%}.contact-art img{width:100%;height:100%;object-fit:cover}.contact-art .handwriting{position:absolute;top:28%;left:6%;color:var(--green-dark);font-size:22px;line-height:1.2;transform:rotate(-10deg);text-shadow:0 1px 8px #fff}.contact-note{color:var(--muted);font-size:10px!important;margin-top:9px}
+/* 07 FOOTER */
+.site-footer{background:#fff;border-top:1px solid #e5eee7}.footer-inner{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-inner nav{display:flex;gap:19px;font-size:12px}.footer-inner small{font-size:10px;color:var(--muted)}.back-to-top{position:fixed;right:22px;bottom:20px;z-index:10;display:grid;place-items:center;width:38px;height:38px;border:2px solid var(--green);border-radius:50%;background:#fffe;color:var(--green);font-size:22px;font-weight:700}
+/* =========================================================
+  01 HEADER / 02 HERO の調整（Ver.3）
+  変更対象はこの2セクションだけです。
+========================================================= */
+/* ヘッダーの文字を大きく、少しゆったり配置 */
+.site-header { height: 82px; }
+.logo { font-size: 26px; }
+.global-nav { gap: 22px; font-size: 15px; letter-spacing: .03em; }
+.nav-contact { padding: 10px 20px; font-size: 14px; }
+
+/* 文字が縦方向にくるりと回転するナビゲーション。
+   通常は英語、マウスを重ねると日本語を表示します。 */
+.rolling-link {
+  display: block;
+  height: 42px;
+  min-width: 86px;
+  perspective: 500px;
+  text-align: center;
+}
+.rolling-text {
+  display: block;
+  position: relative;
+  height: 42px;
+  transform-style: preserve-3d;
+  transition: transform .45s ease;
+  transform-origin: center center;
+}
+.rolling-front, .rolling-back {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  backface-visibility: hidden;
+  transform: translateZ(21px);
+}
+.rolling-back {
+  /* 回転後は背景を付けず、文字色と細い下線だけで表現 */
+  color: var(--green-dark);
+  background: transparent;
+  border-radius: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--green);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 7px;
+  transform: rotateX(-90deg) translateZ(21px);
+}
+.rolling-link:hover .rolling-text,
+.rolling-link:focus-visible .rolling-text {
+  transform: rotateX(90deg);
+}
+.rolling-link:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; border-radius: 6px; }
+
+/* HERO：文字の読みやすさを上げる */
+.hero h1 { font-size: clamp(38px, 3.65vw, 56px); line-height: 1.48; }
+.hero-description { font-size: 16px; line-height: 2; }
+.eyebrow { font-size: 13px; }
+.hero .button { font-size: 14px; padding: 12px 24px; }
+
+/* スマートフォン対応：画面幅が狭い場合だけ適用 */
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr 1fr}.hero h1{font-size:30px}.about-grid{grid-template-columns:35% 63%;gap:2%}.about-facts{grid-column:1/-1}.about-facts ul{display:grid;grid-template-columns:1fr 1fr}.skill-grid{grid-template-columns:repeat(2,1fr)}.work-grid{gap:12px}.work-body{padding:15px}}
+@media(max-width:650px){.container{width:min(100% - 34px,520px)}.section{padding:58px 0}.site-header{height:64px}.logo{font-size:19px}.menu-toggle{display:block;border:0;background:transparent;color:var(--green-dark);font-size:25px;cursor:pointer}.global-nav{display:none;position:absolute;top:64px;left:0;right:0;background:white;box-shadow:var(--shadow);padding:22px;flex-direction:column;gap:17px}.global-nav.is-open{display:flex}.hero{padding:35px 0 45px}.hero-inner{grid-template-columns:1fr;gap:22px}.hero h1{font-size:clamp(26px,7vw,36px);white-space:normal}.hero-visual img{height:270px}.hero-handwriting{font-size:16px}.scroll-cue{display:none}.about-grid{grid-template-columns:1fr}.about-portrait{width:min(260px,80%);margin:auto}.about-copy{margin-top:12px}.about-facts{grid-column:auto;margin-top:18px}.about-facts ul{grid-template-columns:1fr}.skill-grid{grid-template-columns:1fr 1fr;gap:11px}.skill-card{padding:19px 10px;min-height:250px}.skill-card h3{font-size:13px}.skill-card p{font-size:11px}.skill-icon{width:58px;height:58px;font-size:30px}.work-grid{grid-template-columns:1fr;gap:22px}.work-image{height:205px}.contact-grid{grid-template-columns:1fr}.contact-art{height:200px}.footer-inner{flex-direction:column;padding:23px 0;gap:13px}.footer-inner nav{gap:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* モバイルメニューでは回転させず日本語を常時表示 */
+@media (max-width:650px) {
+  .site-header { height: 64px; }
+  .logo { font-size: 21px; }
+  .global-nav { top: 64px; font-size: 16px; }
+  .rolling-link { height: auto; min-width: 0; width: 100%; perspective: none; }
+  .rolling-text { height: auto; transform: none !important; transition: none; }
+  .rolling-front { display: none; }
+  .rolling-back { position: static; transform: none; background: transparent; padding: 6px; }
+  .hero h1 { font-size: clamp(30px, 7vw, 40px); white-space: normal; }
+  .hero-description { font-size: 14px; }
+  .eyebrow { font-size: 11px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .rolling-text { transform: none !important; }
+  .rolling-back { display: none; }
+}
+@media (max-width:650px) and (prefers-reduced-motion:reduce) {
+  .rolling-back { display: grid; }
+}
+
+/* ===== HEROのスクロール案内（Ver.7） =====
+   このブロックだけを変更。植物の根元を2枚の葉で下矢印に見せます。
+   SVGの最後の座標は y=127。そこから下へ伸びる線はありません。 */
+.hero { padding-bottom: 28px; }
+.scroll-leaf {
+  /* HEROの通常の配置に戻し、左右の余白を均等にする */
+  position: relative;
+  z-index: 3;
+  width: max-content;
+  margin: 0 auto;
+  left: auto;
+  bottom: auto;
+  transform: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  color: var(--green-dark);
+  text-decoration: none;
+}
+.scroll-leaf-picture {
+  display: block;
+  width: 90px;
+  height: 135px;
+  overflow: visible;
+  transform-origin: 50% 100%;
+  animation: plant-breeze 5s ease-in-out infinite;
+}
+.scroll-leaf-stem {
+  fill: none;
+  stroke: #6c9979;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+.scroll-leaf-small { fill: #b2cda9; stroke: #91b294; stroke-width: .7; }
+.scroll-leaf-small.light { fill: #cfddba; }
+.scroll-leaf-arrow-left { fill: #a9c6a1; stroke: #88a98b; stroke-width: .8; }
+.scroll-leaf-arrow-right { fill: #bed4a8; stroke: #88a98b; stroke-width: .8; }
+.scroll-leaf-vein { fill: none; stroke: #91ad8c; stroke-width: .75; opacity: .65; }
+.scroll-leaf-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .23em;
+  white-space: nowrap;
+}
+@keyframes plant-breeze {
+  0%, 100% { transform: rotate(-1.5deg) translateY(0); }
+  50% { transform: rotate(1.5deg) translateY(4px); }
+}
+@media (max-width: 650px) {
+  .hero { padding-bottom: 45px; }
+  .scroll-leaf { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-leaf-picture { animation: none; }
+}
+
+/* Ver.13: HERO写真は予想図の縦横比を維持して表示する。
+   画像に手書き文字が含まれるため、HTMLでの文字重ねはしない。 */
+.hero-visual img {
+  height: auto;
+  aspect-ratio: 740 / 479;
+  object-fit: contain;
+}
+@media (max-width: 650px) {
+  .hero-visual img { height: auto; }
+}
+
+/* =========================================================
+   Ver.14 - HEROとABOUTの横方向の余白調整
+   参照画像に合わせて「文章と写真」「紹介文と情報カード」を離す。
+   既存の画像、テキスト、ボタン、アニメーションは変更しません。
+========================================================= */
+@media (min-width: 901px) {
+  /* この2セクションのみ広いキャンバスを使う */
+  .hero-inner,
+  .about-grid {
+    width: min(1280px, calc(100% - 80px));
+  }
+
+  /* HERO：見出しが写真に重ならないよう、5%の明確な余白 */
+  .hero-inner {
+    grid-template-columns: minmax(0, 43%) minmax(0, 52%);
+    gap: 5%;
+  }
+  .hero-copy { min-width: 0; }
+  .hero h1 {
+    font-size: clamp(34px, 3vw, 46px);
+    line-height: 1.5;
+    white-space: normal;
+    letter-spacing: .035em;
+    overflow-wrap: anywhere;
+  }
+  .hero-visual { min-width: 0; }
+
+  /* ABOUT：自己紹介の文章幅を確保し、右側のカードと距離を取る */
+  .about-grid {
+    grid-template-columns: minmax(0, 28%) minmax(0, 40%) minmax(0, 26%);
+    gap: 3%;
+  }
+  .about-copy,
+  .about-facts { min-width: 0; }
+}
+@media (min-width: 651px) and (max-width: 900px) {
+  /* タブレットはHEROを上下に配置し、重なりを回避 */
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .hero h1 { white-space: normal; }
+  .hero-visual { width: min(100%, 650px); margin: 0 auto; }
+  .about-grid { grid-template-columns: minmax(0, 34%) minmax(0, 62%); gap: 4%; }
+  .about-facts { grid-column: 1 / -1; }
+}
+
+/* ============================================================
+   Ver.17：右下のページガイド（カウントダウンなし）
+============================================================ */
+.auto-guide[hidden] { display: none !important; }
+.auto-guide {
+  position: fixed;
+  z-index: 100;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  width: 246px;
+  box-sizing: border-box;
+  padding: 15px 17px 13px;
+  border: 1px solid rgba(104, 150, 118, .23);
+  border-radius: 17px;
+  background: rgba(255, 255, 251, .96);
+  box-shadow: 0 8px 28px rgba(47, 86, 61, .13);
+  color: #3e5948;
+  font-family: inherit;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.auto-guide-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.auto-guide-brand { font-size: 10px; font-weight: 700; letter-spacing: .12em; white-space: nowrap; }
+.auto-guide-brand span { font-size: 16px; color: #78a389; vertical-align: -1px; }
+.auto-guide-status { font-size: 10px; color: #5d8d6f; background: #eaf4e9; padding: 4px 7px; border-radius: 20px; white-space: nowrap; }
+.auto-guide-current { margin: 12px 0 5px; font-size: 17px; font-weight: 700; line-height: 1.25; }
+.auto-guide-next { margin: 0 0 12px; font-size: 11px; color: #637b69; }
+.auto-guide-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.auto-guide-button {
+  min-height: 38px;
+  padding: 8px 6px;
+  border: 1px solid #aac8af;
+  border-radius: 9px;
+  background: #fff;
+  color: #52765e;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease;
+}
+.auto-guide-forward { background: #719c7c; color: #fff; border-color: #719c7c; }
+.auto-guide-button:hover:not(:disabled) { background: #eaf4e9; color: #52765e; }
+.auto-guide-button:focus-visible { outline: 3px solid #315f40; outline-offset: 2px; }
+.auto-guide-button:disabled { opacity: .4; cursor: not-allowed; }
+.auto-guide-hint { margin: 10px 0 0; font-size: 10px; line-height: 1.5; color: #849789; }
+@media (max-width: 650px) {
+  .auto-guide { width: min(220px, calc(100vw - 24px)); right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); padding: 12px 14px; }
+  .auto-guide-hint { font-size: 9px; }
+}
+
+/* ============================================================
+   Ver.18：やさしい植物のPAGE GUIDE
+   セクションが進むと「芽 → 葉 → 花」に成長する。
+   ガイド機能のレイアウトとJSの移動時間はVer.17を維持。
+============================================================ */
+.auto-guide {
+  border: 1px solid #c5d8b8;
+  border-radius: 20px;
+  background: rgba(255, 253, 246, .97);
+  box-shadow: 0 8px 25px rgba(80, 106, 69, .12), inset 0 0 0 3px rgba(243, 248, 232, .75);
+}
+.auto-guide::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  inset: 5px;
+  border: 1px solid rgba(171, 196, 155, .25);
+  border-radius: 15px;
+}
+.auto-guide-top, .auto-guide-current, .auto-guide-next,
+.auto-guide-actions, .auto-guide-hint { position: relative; z-index: 1; }
+.auto-guide-brand { color: #63876a; }
+.auto-guide-status { background: #e7f1d9; }
+.auto-guide-current { margin-top: 15px; }
+.auto-guide-button { border-radius: 14px; background: #fcfaf0; }
+.auto-guide-forward { background: #719c7c; }
+.auto-guide-hint::before { content: "❀ "; color: #94b28b; }
+.guide-plant {
+  position: absolute;
+  top: -49px;
+  left: 50%;
+  width: 88px;
+  height: 66px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 2;
+}
+.guide-plant svg { display: block; overflow: visible; }
+.plant-stem, .plant-leaf, .plant-flower {
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  transition: transform .65s cubic-bezier(.2,.7,.2,1), opacity .5s ease;
+}
+.guide-plant[data-stage="1"] .plant-stem { transform: scaleY(.52); }
+.guide-plant[data-stage="1"] .plant-leaf-left { transform: scale(.55); }
+.guide-plant[data-stage="1"] .plant-leaf-right,
+.guide-plant[data-stage="1"] .plant-leaf-top,
+.guide-plant[data-stage="1"] .plant-flower { opacity: 0; transform: scale(.15); }
+.guide-plant[data-stage="2"] .plant-stem { transform: scaleY(.9); }
+.guide-plant[data-stage="2"] .plant-leaf-top,
+.guide-plant[data-stage="2"] .plant-flower { opacity: 0; transform: scale(.15); }
+.guide-plant[data-stage="3"] .plant-flower { opacity: 1; transform: scale(1); }
+.guide-plant[data-stage="3"] .plant-leaf-top { opacity: 1; transform: scale(1); }
+@media (prefers-reduced-motion: reduce) {
+  .plant-stem, .plant-leaf, .plant-flower { transition: none !important; }
+}
+
+/* ============================================================
+   Ver.21：セクション見出しの文字幅いっぱいに下線を描く
+   最初は線なし。ガイド停止時、または手動で画面中央付近に来た時に描画。
+============================================================ */
+.about-copy .small-line { display: none; } /* 旧35pxの線は非表示 */
+.draw-title {
+  display: table; /* 見出しの文字幅に合わせる（中央寄せはmarginで指定） */
+  position: relative;
+  padding-bottom: 9px;
+}
+.section-heading .draw-title { margin-left: auto; margin-right: auto; }
+.draw-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(131, 170, 140, .38);
+  transform: scaleX(0);
+  transform-origin: left center;
+  visibility: hidden; /* 初回表示は完全に非表示 */
+}
+.draw-title.is-drawn::after {
+  visibility: visible;
+  animation: section-underline-draw 1.05s cubic-bezier(.22, 1, .36, 1) both;
+}
+@keyframes section-underline-draw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .draw-title.is-drawn::after { animation: none; transform: scaleX(1); }
+}
+
+/* Ver.26：右側のプロフィールカード。小見出し＋一言で人柄を紹介。 */
+.about-facts .about-profile-list { display: block; }
+.about-facts .about-profile-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin: 0;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(123, 163, 132, .17);
+}
+.about-facts .about-profile-list li:first-child { padding-top: 0; }
+.about-facts .about-profile-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+.about-facts .about-profile-list .profile-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 35px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #eef4e9;
+  color: #638d73;
+  font-size: 20px;
+}
+.about-facts .profile-detail { min-width: 0; flex: 1; }
+.about-facts .profile-label {
+  display: block;
+  width: auto;
+  text-align: left;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  line-height: 1.4;
+  color: #6c987c;
+}
+.about-facts .profile-detail strong {
+  display: block;
+  margin: 3px 0;
+  color: #344b47;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.about-facts .profile-detail p {
+  margin: 0;
+  color: #586763;
+  font-size: 11px;
+  line-height: 1.75;
+}
+@media (max-width: 900px) {
+  .about-facts .about-profile-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 18px;
+  }
+  .about-facts .about-profile-list li:nth-child(3) { border-bottom: 0; }
+}
+@media (max-width: 650px) {
+  .about-facts .about-profile-list { grid-template-columns: 1fr; }
+  .about-facts .about-profile-list li:nth-child(3) { border-bottom: 1px solid rgba(123, 163, 132, .17); }
+}
+
+/* ============================================================
+   Ver.27：About Me右側カードだけ、D案の柔らかなフチに変更
+   ほかのセクション、アニメーション、機能は変更しません。
+============================================================ */
+#about .about-facts {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #dce7d2;
+  border-radius: 26px;
+  background: linear-gradient(140deg, #fffefa 0%, #ffffff 54%, #f6f9ef 100%);
+  box-shadow: 0 15px 30px rgba(102, 138, 95, .13),
+              0 3px 9px rgba(102, 138, 95, .055);
+}
+
+
+/* ============================================================
+   Ver.28：全体の文字をほんの少し読みやすく、About Meの余白を調整
+   既存の画像・コンテンツ・動作・PAGE GUIDEはそのまま。
+============================================================ */
+/* 文字の調整は控えめに。レイアウトに影響する大見出しは維持します。 */
+body { font-size: 15px; }
+.global-nav, .footer-inner nav { font-size: 13px; }
+.hero-description, .contact p:not(.section-kicker) { font-size: 14px; }
+.about-copy p { font-size: 14px; }
+.section-heading > p:last-child, .skill-card p, .work-body p { font-size: 13px; }
+.about-facts .profile-label { font-size: 10px; }
+.about-facts .profile-detail strong { font-size: 14px; }
+.about-facts .profile-detail p { font-size: 12px; }
+/* デスクトップ：画像⇔文章⇔カードの2つの余白を均等に広げる */
+@media (min-width: 901px) {
+  .about-grid {
+    grid-template-columns: minmax(0, 27%) minmax(0, 38%) minmax(0, 27%);
+    gap: 4%;
+  }
+}
+/* タブレット・スマホは元の段組みを保ち、文字のはみ出しを防ぐ */
+@media (max-width: 900px) {
+  .about-copy, .about-facts { min-width: 0; }
+}
+
+/* Ver.29：Skillsだけを8つの独立カードに。背景や他セクションは維持。 */
+.skills .skill-grid--individual {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1120px;
+  margin-inline: auto;
+}
+.skills .skill-card--individual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  min-height: 235px;
+  padding: 27px 19px 24px;
+  border: 1px solid rgba(123, 163, 132, .12);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .96);
+  box-shadow: 0 10px 24px rgba(69, 102, 75, .08);
+  text-align: center;
+}
+.skills .skill-brand-logo {
+  display: block;
+  width: 66px;
+  height: 66px;
+  object-fit: contain;
+  margin: 0 auto 16px;
+}
+.skills .skill-card--individual h3 {
+  font-size: 17px;
+  line-height: 1.4;
+  margin: 0 0 11px;
+}
+.skills .skill-card--individual p {
+  font-size: 13px;
+  line-height: 1.85;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .skills .skill-grid--individual { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+}
+@media (max-width: 560px) {
+  .skills .skill-grid--individual { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; }
+  .skills .skill-card--individual { min-height: 205px; padding: 21px 10px; }
+  .skills .skill-brand-logo { width: 52px; height: 52px; margin-bottom: 13px; }
+  .skills .skill-card--individual h3 { font-size: 14px; }
+  .skills .skill-card--individual p { font-size: 11px; }
+}
+
+/* Ver.30：Works詳細モーダル（他セクションに影響しない専用クラス） */
+.work-card{display:flex;flex-direction:column}
+.work-card .work-body{flex:1}
+.work-open{margin:0 21px 21px;border:0;border-radius:999px;background:#719c7c;color:#fff;padding:11px 15px;font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.work-open:hover,.work-open:focus-visible{background:#537b5f}
+.work-modal[hidden]{display:none!important}
+.work-modal{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;padding:20px}
+.work-modal-backdrop{position:absolute;inset:0;background:rgba(25,47,37,.64);backdrop-filter:blur(4px)}
+.work-modal-dialog{position:relative;width:min(850px,100%);max-height:min(90vh,950px);overflow-y:auto;background:linear-gradient(140deg,#fff,#fcfdf8);border:1px solid #d3e4d4;border-radius:24px;padding:28px 34px 32px;box-shadow:0 25px 70px rgba(19,43,27,.25);outline:none}
+.work-modal-open{overflow:hidden}
+.work-modal-close{position:absolute;top:14px;right:16px;border:0;background:#edf5ed;border-radius:50%;width:36px;height:36px;color:#476b54;font-size:26px;cursor:pointer}
+.work-modal-kicker{font-size:11px;letter-spacing:.2em;color:#729b7c;font-weight:700;margin:0 0 5px}
+.work-modal-dialog h2{font-size:clamp(23px,4vw,31px);color:#385d47;margin:0 0 18px}
+.work-slide{display:grid;grid-template-columns:38px minmax(0,1fr) 38px;gap:8px;align-items:center}
+.work-slide-arrow{width:38px;height:42px;border:1px solid #d5e6d9;background:#f0f7f0;color:#50795c;border-radius:13px;font-size:32px;line-height:1;cursor:pointer}
+.work-slide-frame{min-width:0;aspect-ratio:16/9;background:#f2f7f0;border:1px solid #e0ebdf;border-radius:16px;display:grid;place-items:center;overflow:hidden}
+.work-slide-frame img{width:100%;height:100%;object-fit:contain}
+.work-slide-placeholder{width:100%;height:100%;display:grid;place-items:center;color:#8aa592;font-size:14px;background:repeating-linear-gradient(135deg,#f6faf4 0,#f6faf4 14px,#f0f6ed 14px,#f0f6ed 28px)}
+.work-slide-controls{display:flex;justify-content:space-between;gap:12px;margin:12px 46px 0;color:#6c806f;font-size:12px}
+.work-slide-dots{display:flex;justify-content:center;gap:10px;margin:13px 0 23px}
+.work-slide-dot{width:10px;height:10px;padding:0;border:0;border-radius:50%;background:#d6e5d6;cursor:pointer}
+.work-slide-dot.is-active{background:#6c9c77}
+.work-modal-info{border-top:1px solid #e2ebe0;padding-top:18px}
+.work-modal-info h3{font-size:14px;color:#456a52;margin:14px 0 5px}
+.work-modal-info p{font-size:13px;line-height:1.85;margin:0;color:#5a6c61}
+.work-modal-info .work-modal-placeholder{color:#829489}
+@media(max-width:650px){.work-modal{padding:10px}.work-modal-dialog{padding:23px 13px 22px;border-radius:17px;max-height:94vh}.work-slide{grid-template-columns:28px minmax(0,1fr) 28px;gap:4px}.work-slide-arrow{width:28px;height:36px;font-size:24px}.work-slide-controls{margin-inline:32px}.work-open{margin-inline:15px}}
+@media(prefers-reduced-motion:no-preference){.work-modal-dialog{animation:work-dialog-in .25s ease-out both}@keyframes work-dialog-in{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:none}}}
+
+/* Ver.31: 作品カード全体がクリック対象。CTAはホバーで明確に反応 */
+.work-card[data-work] { cursor: pointer; }
+.work-card[data-work]:focus-visible { outline: 3px solid #719c7c; outline-offset: 5px; }
+.work-card .work-open {
+  transition: background-color .24s ease, color .24s ease, transform .24s ease, box-shadow .24s ease;
+}
+.work-card:hover .work-open,
+.work-card:focus-visible .work-open,
+.work-card .work-open:hover,
+.work-card .work-open:focus-visible {
+  background-color: #426d50;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(66,109,80,.24);
+}
+.work-card .work-open span { display: inline-block; transition: transform .24s ease; }
+.work-card:hover .work-open span,
+.work-card:focus-visible .work-open span,
+.work-card .work-open:hover span,
+.work-card .work-open:focus-visible span { transform: translate(3px,-3px); }
+@media (prefers-reduced-motion: reduce) {
+  .work-card .work-open, .work-card .work-open span { transition: none; }
+}
