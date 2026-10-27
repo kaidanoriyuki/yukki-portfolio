@@ -246,107 +246,111 @@ filterButtons.forEach((button) => {
 })();
 
 
-// ============================================================
-// Ver.30：Works 詳細ポップアップ＆スライド
-// slides配列に画像を追加すれば、各作品3〜5枚に拡張できます。
-// src: null は差し替え前の仮スライドとして表示します。
-// ============================================================
+// Works detail: Web projects show real pages; graphic projects show one full image.
 (() => {
   const works = [
-    { title: 'Cafe Lumiere', description: 'カフェの雰囲気を伝える、シンプルで落ち着いた架空サイトを制作しました。', tech: 'HTML / CSS / JavaScript', slides: [
-      {src:'assets/work-cafe.webp',caption:'作品イメージ'}, {src:null,caption:'下層ページ（画像準備中）'}, {src:null,caption:'スマートフォン表示（画像準備中）'}
-    ]},
-    { title: 'Andante', description: '観光地をイメージした、動きのあるデザインの架空サイトです。', tech: 'HTML / CSS / JavaScript', slides: [
-      {src:'assets/work-andante.webp',caption:'作品イメージ'}, {src:null,caption:'下層ページ（画像準備中）'}, {src:null,caption:'スマートフォン表示（画像準備中）'}
-    ]},
-    { title: 'ZOO LOGICAL', description: 'WordPressで構築した、動物園の情報を紹介する架空サイトです。', tech: 'WordPress / PHP', slides: [
-      {src:'assets/work-zoo.webp',caption:'作品イメージ'}, {src:null,caption:'下層ページ（画像準備中）'}, {src:null,caption:'スマートフォン表示（画像準備中）'}
-    ]}
+    { title:'ZOO LOGICAL', type:'web', description:'動物園をテーマにした架空サイト。お知らせ・施設紹介・動物紹介・お問い合わせなどを制作しました。', tech:'HTML / CSS / JavaScript', points:'共通ナビゲーションと複数ページ、トップページのスライドショーを制作。', url:'projects/zoo/index.html', slides:[
+      {src:'projects/zoo/index.html',caption:'トップページ'}, {src:'projects/zoo/about.html',caption:'動物園について'}, {src:'projects/zoo/guide.html',caption:'利用ガイド'}, {src:'projects/zoo/animals.html',caption:'動物紹介'}, {src:'projects/zoo/contact.html',caption:'お問い合わせ'}] },
+    { title:'Wedding', type:'web', description:'結婚式場をテーマにした架空のWebサイトです。', tech:'HTML / CSS / JavaScript', points:'写真を使ったビジュアルと、下層ページへの導線を制作。', url:'projects/wedding/index.html', slides:[
+      {src:'projects/wedding/index.html',caption:'トップページ'}, {src:'projects/wedding/concept.html',caption:'コンセプト'}, {src:'projects/wedding/plan.html',caption:'プラン'}, {src:'projects/wedding/fair.html',caption:'ブライダルフェア'}, {src:'projects/wedding/contact.html',caption:'お問い合わせ'}] },
+    { title:'Yukki Portfolio', type:'web-images', description:'制作実績・スキル・プロフィールをまとめたポートフォリオサイトです。', tech:'HTML / CSS / JavaScript / GitHub Pages', points:'作品フィルターや詳細表示など、見やすさと操作性を意識。', url:null, slides:[
+      {src:'assets/hero-scene.webp',caption:'トップページのメインビジュアル'}, {src:'assets/about-illustration.webp',caption:'プロフィールのビジュアル'}, {src:'assets/footer-scene.webp',caption:'お問い合わせのビジュアル'}] },
+    { title:'ホームページ集客相談会', type:'graphic', description:'ホームページ集客相談会の告知バナーです。', tech:'Adobe Illustrator / Adobe Photoshop', points:'訴求するメッセージと参加導線を視覚的に整理。', url:'assets/banner-30.png', slides:[{src:'assets/banner-30.png',caption:'広告バナー'}] },
+    { title:'MOMOIRO KITCHEN CAR FES', type:'graphic', description:'キッチンカーイベントを告知するポスターです。', tech:'Adobe Illustrator / Adobe Photoshop', points:'写真と縦書きコピーを組み合わせた告知デザイン。', url:'assets/poster-momoiro.jpg', slides:[{src:'assets/poster-momoiro.jpg',caption:'イベントポスター'}] }
   ];
   const modal = document.getElementById('work-modal');
   if (!modal) return;
-  const dialog = modal.querySelector('.work-modal-dialog');
-  const frame = document.getElementById('work-slide-frame');
-  const dots = document.getElementById('work-slide-dots');
-  const prev = document.getElementById('work-slide-prev');
-  const next = document.getElementById('work-slide-next');
-  let active = 0, slide = 0, lastFocus = null;
-
-  function render() {
-    const data = works[active];
-    const item = data.slides[slide];
+  const dialog=modal.querySelector('.work-modal-dialog');
+  const frame=document.getElementById('work-slide-frame');
+  const dots=document.getElementById('work-slide-dots');
+  const prev=document.getElementById('work-slide-prev');
+  const next=document.getElementById('work-slide-next');
+  const caption=document.getElementById('work-slide-caption');
+  const count=document.getElementById('work-slide-count');
+  let active=0, slide=0, lastFocus=null;
+  function render(){
+    const data=works[active], item=data.slides[slide];
     frame.replaceChildren();
-    if (item.src) {
-      const img = document.createElement('img');
-      img.src = item.src;
-      img.alt = data.title + '：' + item.caption;
-      frame.append(img);
+    if(data.type==='web'){
+      const iframe=document.createElement('iframe');
+      iframe.src=item.src; iframe.title=data.title+'：'+item.caption;
+      iframe.loading='eager'; iframe.setAttribute('scrolling','yes');
+      frame.append(iframe);
     } else {
-      const placeholder = document.createElement('div');
-      placeholder.className = 'work-slide-placeholder';
-      placeholder.textContent = '画像を準備中';
-      frame.append(placeholder);
+      const img=document.createElement('img');
+      img.src=item.src; img.alt=data.title+'：'+item.caption;
+      frame.append(img);
     }
-    document.getElementById('work-slide-caption').textContent = item.caption;
-    document.getElementById('work-slide-count').textContent = `${slide + 1} / ${data.slides.length}`;
+    caption.textContent=item.caption;
+    count.textContent=data.slides.length>1 ? `${slide+1} / ${data.slides.length}` : '';
+    const multi=data.slides.length>1;
+    prev.hidden=!multi; next.hidden=!multi; dots.hidden=!multi;
     dots.replaceChildren();
-    data.slides.forEach((entry, index) => {
-      const dot = document.createElement('button');
-      dot.type = 'button';
-      dot.className = 'work-slide-dot' + (index === slide ? ' is-active' : '');
-      dot.setAttribute('aria-label', `${index + 1}枚目を表示`);
-      dot.setAttribute('aria-current', index === slide ? 'true' : 'false');
-      dot.addEventListener('click', () => { slide = index; render(); });
-      dots.append(dot);
+    if(multi) data.slides.forEach((entry,i)=>{
+      const dot=document.createElement('button');dot.type='button';
+      dot.className='work-slide-dot'+(i===slide?' is-active':'');
+      dot.setAttribute('aria-label',entry.caption+'を表示');
+      dot.setAttribute('aria-current',i===slide?'true':'false');
+      dot.addEventListener('click',()=>{slide=i;render();});dots.append(dot);
     });
   }
-  function open(index) {
-    if (!works[index]) return;
-    active = index; slide = 0; lastFocus = document.activeElement;
-    const data = works[active];
-    document.getElementById('work-modal-title').textContent = data.title;
-    document.getElementById('work-modal-description').textContent = data.description;
-    document.getElementById('work-modal-tech').textContent = data.tech;
-    render();
-    modal.hidden = false;
-    document.body.classList.add('work-modal-open');
-    dialog.focus();
+  function open(index){
+    if(!works[index]) return;
+    active=index;slide=0;lastFocus=document.activeElement;
+    const data=works[active];
+    modal.classList.toggle('is-graphic',data.type==='graphic');
+    modal.classList.toggle('is-web',data.type==='web');
+    document.getElementById('work-modal-title').textContent=data.title;
+    document.getElementById('work-modal-description').textContent=data.description;
+    document.getElementById('work-modal-tech').textContent=data.tech;
+    document.getElementById('work-modal-points').textContent=data.points;
+    const linkBox=document.getElementById('work-modal-link');linkBox.replaceChildren();
+    const a=document.createElement('a');a.className='work-detail-action';
+    a.href=data.url || '#top';
+    if(data.url){a.target='_blank';a.rel='noopener noreferrer';}
+    else {a.href='#top';a.addEventListener('click',e=>{e.preventDefault();close();window.scrollTo({top:0,behavior:'smooth'});});}
+    a.textContent=data.type==='graphic'?'作品画像を大きく開く ↗':data.url?'実際のサイトを見る ↗':'ポートフォリオのトップへ ↗';
+    linkBox.append(a);
+    render();modal.hidden=false;document.body.classList.add('work-modal-open');dialog.focus();
   }
-  function close() {
-    modal.hidden = true;
-    document.body.classList.remove('work-modal-open');
-    lastFocus?.focus();
-  }
-  document.querySelectorAll('[data-work-open]').forEach(button => {
-    button.addEventListener('click', () => open(Number(button.dataset.workOpen)));
+  function close(){modal.hidden=true;frame.replaceChildren();document.body.classList.remove('work-modal-open');lastFocus?.focus();}
+  document.querySelectorAll('[data-work-open]').forEach(b=>b.addEventListener('click',()=>open(Number(b.dataset.workOpen))));
+  document.querySelectorAll('.work-card[data-work]').forEach(card=>{
+    card.addEventListener('click',e=>{if(!e.target.closest('[data-work-open]'))open(Number(card.dataset.work));});
+    card.addEventListener('keydown',e=>{if(e.target===card&&(e.key==='Enter'||e.key===' ')){e.preventDefault();open(Number(card.dataset.work));}});
   });
-  // カードの画像・余白・説明文を含め、どこを押しても詳細を開く。
-  document.querySelectorAll('.work-card[data-work]').forEach(card => {
-    card.addEventListener('click', event => {
-      if (event.target.closest('[data-work-open]')) return; // ボタン側の処理と二重にしない
-      open(Number(card.dataset.work));
-    });
-    card.addEventListener('keydown', event => {
-      if (event.target !== card) return;
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        open(Number(card.dataset.work));
-      }
-    });
-  });
-  modal.querySelectorAll('[data-close-work]').forEach(button => button.addEventListener('click', close));
-  prev.addEventListener('click', () => { slide = (slide - 1 + works[active].slides.length) % works[active].slides.length; render(); });
-  next.addEventListener('click', () => { slide = (slide + 1) % works[active].slides.length; render(); });
-  document.addEventListener('keydown', event => {
-    if (modal.hidden) return;
-    if (event.key === 'Escape') { event.preventDefault(); close(); }
-    if (event.key === 'ArrowLeft') { event.preventDefault(); prev.click(); }
-    if (event.key === 'ArrowRight') { event.preventDefault(); next.click(); }
-    if (event.key === 'Tab') {
-      const focusable = [...modal.querySelectorAll('button:not([disabled])')];
-      const first = focusable[0], last = focusable[focusable.length - 1];
-      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  modal.querySelectorAll('[data-close-work]').forEach(b=>b.addEventListener('click',close));
+  const change=n=>{const length=works[active].slides.length;if(length<2)return;slide=(slide+n+length)%length;render();};
+  prev.addEventListener('click',()=>change(-1));next.addEventListener('click',()=>change(1));
+  document.addEventListener('keydown',e=>{
+    if(modal.hidden)return;
+    if(e.key==='Escape'){e.preventDefault();close();}
+    if(e.key==='ArrowLeft'){e.preventDefault();change(-1);}
+    if(e.key==='ArrowRight'){e.preventDefault();change(1);}
+    if(e.key==='Tab'){
+      const focusable=[...modal.querySelectorAll('button:not([hidden]),a[href]')].filter(el=>el.getClientRects().length);
+      const first=focusable[0],last=focusable[focusable.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
     }
   });
+})();;
+
+
+// v39: 謝辞の一度きりのスクロール演出（ほかの機能から独立）
+(() => {
+  const thanks = document.querySelector('.contact-thanks-copy');
+  if (!thanks || !('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  thanks.classList.add('thanks-animate-ready');
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      thanks.classList.add('thanks-is-visible');
+      observer.disconnect();
+      break;
+    }
+  }, { threshold: 0.25 });
+  observer.observe(thanks);
 })();
+
